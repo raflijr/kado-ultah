@@ -1,0 +1,123 @@
+<html>
+  <meta charset="UTF-8" /><meta
+    content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5"
+    name="viewport"
+  />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <link
+    href="https://buatkamu.likeadream.repl.co/style.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <script src="https://buatkamu.likeadream.repl.co/script.js"></script>
+  <head>
+    <title>Kado Ultah</title>
+  </head>
+
+  <body>
+    <style>
+      body {
+        background-image: url("img/bg.jpeg");
+        background-size: 45%;
+        animation: none;
+      }
+      @keyframes fanim {
+        0% {
+          background-size: 45%;
+        }
+        25% {
+          background-size: 47.5%;
+        }
+        50% {
+          background-size: 50%;
+        }
+        75% {
+          background-size: 47.5%;
+        }
+        100% {
+          background-size: 45%;
+        }
+      }
+    </style>
+
+    <div id="Content">
+      <div class="foto">
+        <div class="image">
+          <!-- Foto Atas --><img
+            src="img/pp.jpg"
+            width="100px"
+            height="100px"
+          />
+        </div>
+        <p id="textnama"></p>
+      </div>
+
+      <div id="pergeseran">
+        <p><i>Geser &#128073;</i></p>
+        <p>Cie yang tambah tua</p>
+        <p>Selamat ulang tahun &#129395;</p>
+        <p>Semangat magangnya</p>
+        <p>Jangan keseringan makan yang pedes-pedes</p>
+        <p>God bless you,</p>
+        <p>Wish you all the best &#129395;</p>
+        <p>
+          Pencet kadonya &#128073;
+          <a id="tm" onClick="kejut();">[ &#127873; ]</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      //Audio Link MP3
+      function play() {
+        var audio = new Audio("aud/bgm.mp3");
+        audio.play();
+        audio.loop = true;
+        audio.addEventListener(
+          "ended",
+          function () {
+            this.currentTime = 0;
+            this.play();
+          },
+          false
+        );
+      }
+      //Pembuka
+      var a = 0,
+        textnm;
+      textnm = "Halo Anggie :)";
+
+      const swals = Swal.mixin({ allowOutsideClick: false });
+
+      async function kejut() {
+        await swals.fire({
+          title: "Happy Birthday",
+          text: "Jangan lupa traktirannya",
+          imageUrl: "https://i.postimg.cc/5yVdrsCr/kado.gif",
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: "HBD",
+        });
+        await swals.fire("Kirim pesan ini ke no WhatsApp aku, oke?");
+        window.location =
+          "https://api.whatsapp.com/send?phone=+6281916425853&text=Aku udah liat semuanya nih" +
+          "%0A%0A" +
+          "Makasih ya udah ngucapin!";
+      }
+
+      async function start() {
+        await swals.fire("Halo Anggie :)");
+        setTimeout(mulai, 900);
+        play();
+      }
+      start();
+    </script>
+  </body>
+</html>
